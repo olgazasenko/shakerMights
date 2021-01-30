@@ -1,0 +1,10 @@
+For testing this application I would take the following approach:
+1. Client tests to make sure that UI reacts to the user's actions appropriately. For example, clicking on Add Product should display a dialog.
+   Entering a name and price is mandatory - Add button in the dialog is disabled until those two values are entered.
+2. Server unit tests to ensure that the logic of the backend functions correcly. 
+   One example of that is testing that the filtering is applied to the list of products.
+3. Intergation tests. For example, writing endpoint tests using mocked data, and making sure that added product is persisted.
+   
+Testing the same thing with unit and integration tests would be redundant. So the author would need to decide which workflow requires integration testing,
+and which is sufficient to test with unit tests.
+And in additon to automated tests, this can be tested manually, because human eye can catch workflow inconsistencies or things like UI flickering.

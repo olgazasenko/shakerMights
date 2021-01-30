@@ -1,0 +1,7 @@
+A few things could be added to the mock:
+- page number and ability to navigate to the next page - this is applicable when all the products cannot be displayed on the same page
+- view options, such as sort (by name, price - ascending, descending), products per page (10, 20, etc)
+- remove product - could be an X in the top right corner of each product (shows up on hover, displays a confirmation dialog on click).
+  However, it may be preferable to have the delete action on the product details page, not in the listing view.
+- quick edit actions, such as editing name or price. For example, when user hovers over the name, the cursor turns into a pencil,
+  then user can click on the name, which becomes a text input. Pressing enter will save the changes if there were any.

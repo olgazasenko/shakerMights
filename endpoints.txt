@@ -1,0 +1,39 @@
+// fetch all the products for the given brand
+GET /brands/:brandId/products/:filter    // filter is a enum ['All', 'Parents', 'Children']
+// responds with Product[]
+
+// fetch a particular product
+GET brands/:brandId/products/:id
+// responds with Product
+// Including the brandId here for consistency with other endpoints, as well as for faster lookup.
+// For example, database could be sharded by the brandId.
+
+// add a product
+POST brands/:brandId/products
+body: {
+  name: String,
+  price: Number,
+  imgURI: String,
+  children: String[]
+}
+// image must be uploaded prior to calling this endpoint. For example, there can be a product creation dialog,
+// which has a file upload form. While the file is uploading, user can enter other information about the product.
+// Once the image has uploaded, a green checkmark is shown next to the upload form, and the 'Add' button at the bottom
+// of the dialog becomes enabled. I will attach a drawing of what I am imagining for this.
+
+// responds with {status: String, product: Product}
+// product will be null if the request was unsuccessful
+// the reason I'm sending back Product here, is so that the client can immediately dispay it.
+// the same thing could be achieved by sending only the product id back, and client subsequently
+// calling GET brands/:brandId/products/:id, but the approach with sending the whole Product back eliminates the need 
+// to call another endpoint.
+
+// upload an image
+POST /upload
+// responds with the URI of the image in the file storage
+
+Additional endpoints:
+DELETE brands/:brandId/products/:id
+PUT brands/:brandId/products/:id // to edit the product
+
+
