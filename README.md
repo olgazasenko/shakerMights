@@ -1,2 +1,2 @@
 # shakerMights
-Take-home assignment
+See the master branch please. 
